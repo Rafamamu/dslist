@@ -15,9 +15,10 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
 
-
+    // Listar todos os jogos usando DTO
     public List<GameMinDTO> findAll() {
        List<Game> result = gameRepository.findAll();
-       return result.stream().map(x -> new GameMinDTO(x)).toList();
+       return result.stream()
+               .map(x -> new GameMinDTO(x)).toList();
     }
 }
